@@ -1,0 +1,22 @@
+# Added by the repository owner: setup required "Deploy to Staging" but did not
+# generate a staging workflow for the trunk model.
+name: Deploy to Staging
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy-staging:
+    name: "Deploy to Staging"
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Deploy to Staging
+        run: |
+          echo "Simulating deployment to Staging for ${GITHUB_SHA}..."
+          echo "Staging deployment successful"
