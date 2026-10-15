@@ -1,4 +1,4 @@
-function greet(name, word = 'Hello') {
-  return `${word}, ${String(name).trim()}!`;
+function greet(name, word = 'Hello', mark = '!') {
+  return `${word}, ${String(name).trim()}${mark}`;
 }
 module.exports = { greet };
